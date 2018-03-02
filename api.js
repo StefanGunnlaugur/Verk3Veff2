@@ -28,7 +28,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   const result = await readAll();
-  if (result) {
+  if (result.lenght > 0) {
     return res.json(result);
   }
   return res.status(404).json({ error: 'Not found' });
